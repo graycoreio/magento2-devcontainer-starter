@@ -1,0 +1,58 @@
+{
+  "name": "magento2-devcontainer",
+  "dockerComposeFile": [
+    "docker-compose.yml",
+    "magento2-devcontainer/compose/2.4.8/docker-compose.yml",
+    "docker-compose.shared.yml",
+    "docker-compose.local.yml"
+  ],
+  "workspaceFolder": "/workspace",
+  "service": "php",
+  "forwardPorts": [
+    80,
+    3306,
+    9200,
+    5672,
+    6379
+  ],
+  "initializeCommand": "[ -f .devcontainer/magento2-devcontainer/.gitignore ] || (git submodule update --init --recursive)",
+  "portsAttributes": {
+    "80": {
+      "label": "Nginx"
+    },
+    "3306": {
+      "label": "MySQL/MariaDB"
+    },
+    "9200": {
+      "label": "OpenSearch"
+    },
+    "5672": {
+      "label": "RabbitMQ"
+    },
+    "6379": {
+      "label": "Redis/Valkey"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteUser": "dev",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "installYarnUsingApt": false
+    },
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  }
+}
