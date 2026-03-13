@@ -9,7 +9,7 @@
   "workspaceFolder": "/workspace",
   "service": "php",
   "forwardPorts": [
-    80,
+    "nginx:8000",
     3306,
     9200,
     5672,
@@ -17,7 +17,7 @@
   ],
   "initializeCommand": "[ -f .devcontainer/magento2-devcontainer/.gitignore ] || (git submodule update --init --recursive)",
   "portsAttributes": {
-    "80": {
+    "8000": {
       "label": "Nginx"
     },
     "3306": {
