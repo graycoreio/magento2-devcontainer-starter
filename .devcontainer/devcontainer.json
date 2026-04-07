@@ -10,6 +10,7 @@
   "service": "php",
   "forwardPorts": [
     "nginx:8000",
+    "mailpit:8025",
     3306,
     9200,
     5672,
@@ -31,6 +32,9 @@
     },
     "6379": {
       "label": "Redis/Valkey"
+    },
+    "mailpit:8025": {
+      "label": "Mailpit"
     }
   },
   "customizations": {
