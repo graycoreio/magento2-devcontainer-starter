@@ -10,3 +10,4 @@ services:
     volumes:
       - ../:/workspace:cached
       - ./magento2-devcontainer/nginx/default:/etc/nginx/templates
+      - ./magento2-devcontainer/nginx/fastcgi_params:/etc/nginx/fastcgi_params:ro
