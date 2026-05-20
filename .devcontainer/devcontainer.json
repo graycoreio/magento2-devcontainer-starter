@@ -9,13 +9,12 @@
   "workspaceFolder": "/workspace",
   "service": "php",
   "forwardPorts": [
-    "nginx:8000",
-    "mailpit:8025"
+    8000,
+    8025
   ],
   "initializeCommand": "[ -f .devcontainer/magento2-devcontainer/.gitignore ] || (git submodule update --init --recursive)",
-  "postStartCommand": "bash .devcontainer/magento2-devcontainer/bin/post-start.sh",
   "portsAttributes": {
-    "nginx:8000": {
+    "8000": {
       "label": "Magento 2 Storefront (nginx)"
     },
     "3306": {
@@ -30,7 +29,7 @@
     "6379": {
       "label": "Redis/Valkey"
     },
-    "mailpit:8025": {
+    "8025": {
       "label": "Mailpit"
     }
   },
