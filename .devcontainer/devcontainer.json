@@ -10,11 +10,7 @@
   "service": "php",
   "forwardPorts": [
     "nginx:8000",
-    "mailpit:8025",
-    3306,
-    9200,
-    5672,
-    6379
+    "mailpit:8025"
   ],
   "initializeCommand": "[ -f .devcontainer/magento2-devcontainer/.gitignore ] || (git submodule update --init --recursive)",
   "postStartCommand": "bash .devcontainer/magento2-devcontainer/bin/post-start.sh",
