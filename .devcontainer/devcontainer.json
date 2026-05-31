@@ -13,6 +13,10 @@
     8025
   ],
   "initializeCommand": "[ -f .devcontainer/magento2-devcontainer/.gitignore ] || (git submodule update --init --recursive)",
+  "postStartCommand": {
+    "forward-nginx": "nohup socat TCP-LISTEN:8000,fork,reuseaddr TCP:nginx:8000 >/tmp/socat-8000.log 2>&1 &",
+    "forward-mailpit": "nohup socat TCP-LISTEN:8025,fork,reuseaddr TCP:mailpit:8025 >/tmp/socat-8025.log 2>&1 &"
+  },
   "portsAttributes": {
     "8000": {
       "label": "Magento 2 Storefront (nginx)"
